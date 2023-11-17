@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+
+{%block body_block%}
+
+<div class="container">
+    <h2 class="text-center">ADD NEW EMPLOYEE</h2>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="" method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+                <div class="mb-3">
+                    {{form.as_p}}
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary rounded">create</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+{%endblock%}

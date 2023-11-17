@@ -1,0 +1,28 @@
+----orm query for creating new query object---- 
+>>> Employees.objects.create(name="jishnu",department="sales",salary=15000,email="jishnu@gmail.com",age=32,contact="9999888231")
+
+---orm query for fecthing all records---
+>>>qs=Employees.objects.all()
+
+---orm query for fecthing a specific employee details---
+>>>qs=Employees.objects.get(id=1)
+
+---orm query for filtering employee records---
+>>>qs=Employees.objects.filter(department="hr")
+>>>qs=Employees.objects.filter(salary__gte=15000)
+__gte = >=
+__lte = <=
+
+---orm query for editing an employee details---
+>>>Employees.objects.filter(id=2).update(age=44,salary=55000)
+
+---orm query for excluding object---
+>>>qs=Employees.objects.exclude(department="hr")
+
+---orm query for deleting employee---
+>>>Employees.objects.filter(id=3).delete()
+
+---orm query for sorting Employees---
+>>>qs=Employees.objects.all().order_by("salary")
+---descending--
+>>>qs=Employees.objects.all().order_by("-salary")
